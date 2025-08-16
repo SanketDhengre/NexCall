@@ -68,6 +68,12 @@ export default function VideoMeetComponent() {
     // if(isChrome() === false) {
 
     // }
+
+    useEffect(() => {
+        console.log("HELLO");
+        getPermissions();
+    });
+
     const getPermissions = async () => {
         try {
             const videoPermission = await navigator.mediaDevices.getUserMedia({
@@ -122,8 +128,6 @@ export default function VideoMeetComponent() {
             console.log("SET STATE HAS ", video, audio);
         }
     }, [video, audio]);
-
-    // let getUserMediaSuccess = (stream) => {};
 
     let getUserMediaSuccess = (stream) => {
         try {
