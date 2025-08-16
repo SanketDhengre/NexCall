@@ -17,8 +17,9 @@ import ChatIcon from "@mui/icons-material/Chat";
 import io from "socket.io-client";
 
 import styles from "../styles/videoComponent.module.css";
+import server from "../environment";
 
-const server_url = "http://localhost:8000";
+const server_url = server; // Use the production server URL
 
 var connections = {};
 
