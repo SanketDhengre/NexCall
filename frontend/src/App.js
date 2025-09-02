@@ -1,5 +1,4 @@
 import "./App.css";
-import "./styles/global.css";
 import { AuthProvider } from "./contexts/AuthContext";
 import Authentication from "./pages/authentication";
 import LandingPage from "./pages/landing";
