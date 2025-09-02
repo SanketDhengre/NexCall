@@ -1,89 +1,207 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Landing Page Container */
 .landingPageContainer {
     width: 100vw;
     height: 100vh;
-    background: url("/public/background.png");
+    background: url("/public/background.png"); /* Fixed the path */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     color: white;
+    overflow: hidden; /* Prevent content overflow */
+    display: flex;
+    flex-direction: column; /* Stack navbar and main content */
 }
 
+/* Navbar */
 .landingPageContainer nav {
-    padding-inline: 1.2rem;
-    padding-block: 1.6rem;
+    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between logo and nav items */
     align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    z-index: 10; /* Ensure it stays above other elements */
+    position: sticky; /* Navbar sticks to the top */
+    top: 0;
+}
+
+/* Logo Section */
+.landingPageContainer nav .navHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Add spacing between the logo and text */
 }
 
 .landingPageContainer nav h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ff9839; /* Highlighted brand color */
 }
 
+/* Navigation List */
 .landingPageContainer nav .navlist {
     display: flex;
-    gap: 1.6rem;
+    gap: 2rem; /* Add spacing between navigation items */
     cursor: pointer;
 }
 
+/* Navigation Items */
+.landingPageContainer nav .navlist p {
+    font-size: 1rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.landingPageContainer nav .navlist p:hover {
+    color: #ff9839; /* Highlight on hover */
+}
+
+/* Main Content */
 .landingMainContainer {
     display: flex;
     justify-content: space-between;
-    padding-inline: 3rem;
-    height: 80vh;
     align-items: center;
+    padding: 2rem 3rem;
+    height: calc(100vh - 80px); /* Adjust height to exclude navbar */
+    gap: 2rem;
+    overflow: hidden;
 }
 
+/* Left Panel */
 .landingMainContainer > div:nth-child(1) {
     font-size: 1.8rem;
+    max-width: 50%; /* Prevent text from overflowing */
+}
+
+.landingMainContainer > div:nth-child(1) h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.landingMainContainer > div:nth-child(1) h1 span {
+    color: #ff9839; /* Highlighted text */
+}
+
+.landingMainContainer > div:nth-child(1) p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #e0e0e0;
 }
 
 .landingMainContainer > div:nth-child(1) div[role="button"] {
     background: #d97500;
     width: fit-content;
-    padding: 1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 20px;
     margin-top: 1.6rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
+
+.landingMainContainer > div:nth-child(1) div[role="button"]:hover {
+    background: #ff9839;
+}
+
 .landingMainContainer > div:nth-child(1) div[role="button"] a {
     text-decoration: none;
     color: white;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
 }
 
+/* Right Panel */
 .landingMainContainer > div:nth-child(2) img {
     height: 70vh;
-    width: auto;
+    max-width: 100%;
+    object-fit: cover; /* Ensure the image fits nicely */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
+/* Navbar Improvements */
 .navBar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 20px;
-    text-align: center;
-}
-.meetContainer {
-    display: flex;
-    padding-inline: 20px;
-    height: 80vh;
-    gap: 10vw;
-    justify-content: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: white;
+    z-index: 10;
+    position: sticky;
+    top: 0;
 }
 
+/* Meet Container */
+.meetContainer {
+    display: flex;
+    padding: 2rem;
+    height: 80vh;
+    gap: 5vw; /* Reduced gap for better alignment */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Left Panel */
 .leftPanel {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
+/* Right Panel */
 .rightPanel {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .rightPanel > img {
     width: 30vw;
     height: auto;
     border-radius: 20px;
+    object-fit: cover; /* Ensure the image fits nicely */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .landingMainContainer {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .landingMainContainer > div:nth-child(1) {
+        max-width: 90%; /* Adjust text width for smaller screens */
+        text-align: center;
+    }
+
+    .landingMainContainer > div:nth-child(2) img {
+        height: 50vh; /* Reduce image height for smaller screens */
+    }
+
+    .navBar {
+        flex-direction: column; /* Stack navbar items vertically */
+        gap: 1rem;
+    }
+
+    .meetContainer {
+        flex-direction: column; /* Stack content vertically */
+        gap: 2rem;
+    }
+
+    .rightPanel > img {
+        width: 80%; /* Adjust image width for smaller screens */
+    }
 }

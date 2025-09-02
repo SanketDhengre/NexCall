@@ -17,7 +17,7 @@
     position: absolute;
     bottom: 15%; /* Increased spacing from the bottom to avoid overlapping with buttons */
     left: 5%; /* Added spacing from the left */
-    height: 15vh; /* Adjusted height for better responsiveness */
+    height: 30vh; /* Adjusted height for better responsiveness */
     width: auto; /* Maintain aspect ratio */
     max-width: 20%; /* Ensure it doesn’t exceed a certain width */
     border-radius: 15px; /* Slightly reduced border radius for a cleaner look */
@@ -78,7 +78,7 @@
 /* Style for individual video elements */
 .conferenceView video {
     width: 100%; /* Make the video responsive */
-    max-width: 300px; /* Set a maximum width for the video */
+    max-width: 600px; /* Set a maximum width for the video */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Add rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
