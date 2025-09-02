@@ -20,7 +20,6 @@ NexCall is a lightweight video-conferencing web app built with React (frontend),
 -   [Socket.IO & WebRTC notes](#socketio--webrtc-notes)
 -   [Troubleshooting — common issues & fixes](#troubleshooting—common-issues--fixes)
 -   [Contributing](#contributing)
--   [License](#license)
 
 ---
 
@@ -252,17 +251,3 @@ Place this after your API routes so API calls are not caught by the wildcard.
 4. Push and open a PR
 
 Please add tests or manual verification steps for features that affect WebRTC or socket logic.
-
----
-
-## License
-
-MIT © NexCall
-
----
-
-If you need, I can:
-
--   generate a sample `.env` and `environment.js` files,
--   provide exact Express code to serve `frontend/build`,
--   or produce a short checklist for Render deployment (links/screenshots).
